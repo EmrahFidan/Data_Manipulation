@@ -1,0 +1,264 @@
+# Read File
+data <- read.table("DatasetNA.txt", header = TRUE, sep = " ", dec = ",")
+
+# A : Calculate Number of observations, Minimum,Maximum,Range,
+# Sum, Mean, Median, Sum of squares, Variance, Standard deviation
+
+# Number of Observations
+calculate_num_obs <- function(data) {
+  count <- 0
+  for (i in 1:length(data)) {
+    if (!is.na(data[i])) {
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+
+# Minimum
+calculate_minimum <- function(data) {
+  min_val <- Inf
+  for (i in 1:length(data)) {
+    if (!is.na(data[i]) && (is.infinite(min_val) || data[i] < min_val)) {
+      min_val <- data[i]
+    }
+  }
+  return(ifelse(is.infinite(min_val), NA, min_val))
+}
+
+# Maximum
+calculate_maximum <- function(data) {
+  max_val <- -Inf
+  for (i in 1:length(data)) {
+    if (!is.na(data[i]) && (is.infinite(max_val) || data[i] > max_val)) {
+      max_val <- data[i]
+    }
+  }
+  return(ifelse(is.infinite(max_val), NA, max_val))
+}
+
+# Range
+calculate_range <- function(data) {
+  min_val <- calculate_minimum(data)
+  max_val <- calculate_maximum(data)
+  return(ifelse(is.na(min_val) || is.na(max_val), NA, max_val - min_val))
+}
+
+# Sum
+calculate_sum <- function(data) {
+  sum_val <- 0
+  for (i in 1:length(data)) {
+    if (!is.na(data[i])) {
+      sum_val <- sum_val + data[i]
+    }
+  }
+  return(sum_val)
+}
+
+# Mean
+calculate_mean <- function(data) {
+  sum_val <- 0
+  count <- 0
+  for (i in 1:length(data)) {
+    if (!is.na(data[i])) {
+      sum_val <- sum_val + data[i]
+      count <- count + 1
+    }
+  }
+  if (count > 0) {
+    mean_val <- sum_val / count
+  } else {
+    mean_val <- NA
+  }
+  return(mean_val)
+}
+
+
+# Median
+calculate_median <- function(data) {
+  sorted_data <- sort(data)
+  num_obs <- calculate_num_obs(data)
+  if (num_obs %% 2 == 0) {
+    median_val <- (sorted_data[num_obs/2] + sorted_data[(num_obs/2) + 1]) / 2
+  } else {
+    median_val <- sorted_data[(num_obs+1)/2]
+  }
+  return(ifelse(is.na(median_val), NA, median_val))
+}
+
+# Sum of squares
+calculate_sum_squares <- function(data) {
+  mean_val <- calculate_mean(data)
+  sum_squares <- 0
+  for (i in 1:length(data)) {
+    if (!is.na(data[i])) {
+      sum_squares <- sum_squares + (data[i] - mean_val)^2
+    }
+  }
+  return(sum_squares)
+}
+
+# Variance
+calculate_variance <- function(data) {
+  num_obs <- calculate_num_obs(data)
+  sum_squares <- calculate_sum_squares(data)
+  variance <- sum_squares / (num_obs - 1)
+  return(ifelse(is.na(variance), NA, variance))
+}
+
+# Standard deviation
+calculate_std_dev <- function(data) {
+  variance <- calculate_variance(data)
+  return(ifelse(is.na(variance), NA, sqrt(variance)))
+}
+
+calculate_statistics <- function(data) {
+  stats <- c(
+    "Number of observations" = calculate_num_obs(data),
+    "Minimum" = calculate_minimum(data),
+    "Maximum" = calculate_maximum(data),
+    "Range" = calculate_range(data),
+    "Sum" = calculate_sum(data),
+    "Mean" = calculate_mean(data),
+    "Median" = calculate_median(data),
+    "Sum of squares" = calculate_sum_squares(data),
+    "Variance" = calculate_variance(data),
+    "Standard deviation" = calculate_std_dev(data)
+  )
+  return(stats)
+}
+
+# Select Var1-Var8 columns
+veri_altkume <- data[, c("Var1", "Var2", "Var3", "Var4", "Var5", "Var6", "Var7", "Var8")]
+
+# String -> numeric
+veri_numeric <- apply(veri_altkume, 2, function(x) as.numeric(as.character(gsub(",", ".", x))))
+
+
+for (i in 1:ncol(veri_numeric)) {
+  stats <- calculate_statistics(veri_numeric[, i])
+  main_title <- paste("Statistics of", colnames(veri_numeric)[i])
+  cat(main_title, "\n")
+  cat("Number of observations:", stats[1], "\n")
+  cat("Minimum:", stats[2], "\n")
+  cat("Maximum:", stats[3], "\n")
+  cat("Range:", stats[4], "\n")
+  cat("Sum:", stats[5], "\n")
+  cat("Mean:", stats[6], "\n")
+  cat("Median:", stats[7], "\n")
+  cat("Sum of squares:", stats[8], "\n")
+  cat("Variance:", stats[9], "\n")
+  cat("Standard deviation:", stats[10], "\n\n")
+}
+
+
+#-------------------------------------------------------------------#
+
+# B : Calculate Cross-products, Covariance, Correlations
+
+
+
+calculate_cross_products <- function(data, vars) {
+  cross_products <- matrix(NA, nrow = length(vars), ncol = length(vars), dimnames = list(vars, vars))
+  
+  for (i in 1:length(vars)) {
+    for (j in 1:length(vars)) {
+      cross_products[i, j] <- sum(data[[vars[i]]] * data[[vars[j]]], na.rm = TRUE)
+    }
+  }
+  
+  return(cross_products)
+}
+
+
+calculate_covariance <- function(x, y) {
+  n <- sum(!is.na(x) & !is.na(y))
+  sum_x <- sum(x, na.rm = TRUE)
+  sum_y <- sum(y, na.rm = TRUE)
+  
+  mean_x <- sum_x / n
+  mean_y <- sum_y / n
+  
+  covariance <- sum((x - mean_x) * (y - mean_y), na.rm = TRUE) / (n - 1)
+  
+  return(covariance)
+}
+
+calculate_correlation <- function(x, y) {
+  covariance <- calculate_covariance(x, y)
+  n <- sum(!is.na(x) & !is.na(y))
+  sum_x <- sum(x, na.rm = TRUE)
+  sum_y <- sum(y, na.rm = TRUE)
+  
+  mean_x <- sum_x / n
+  mean_y <- sum_y / n
+  
+  var_x <- sum((x - mean_x)^2, na.rm = TRUE) / (n - 1)
+  var_y <- sum((y - mean_y)^2, na.rm = TRUE) / (n - 1)
+  
+  correlation <- covariance / (sqrt(var_x) * sqrt(var_y))
+  
+  return(correlation)
+}
+
+
+calculate_covariance_correlation <- function(data, vars) {
+  cov_matrix <- matrix(NA, nrow = length(vars), ncol = length(vars), dimnames = list(vars, vars))
+  corr_matrix <- matrix(NA, nrow = length(vars), ncol = length(vars), dimnames = list(vars, vars))
+  
+  for (i in 1:length(vars)) {
+    for (j in 1:length(vars)) {
+      cov_matrix[i, j] <- calculate_covariance(data[[vars[i]]], data[[vars[j]]])
+      corr_matrix[i, j] <- calculate_correlation(data[[vars[i]]], data[[vars[j]]])
+    }
+  }
+  
+  return(list(covariance = cov_matrix, correlation = corr_matrix))
+}
+
+
+# Specify the continuous variables
+continuous_vars <- c("Var1", "Var2", "Var3", "Var4", "Var5", "Var6", "Var7", "Var8")
+
+# Calculate cross-products
+cross_products <- calculate_cross_products(data, continuous_vars)
+
+# Print the resulting cross-products matrix
+print(cross_products)
+print("-----------------------------------------------------------------------------------------------------")
+
+
+# Calculate covariance and correlation
+cov_corr <- calculate_covariance_correlation(data, continuous_vars)
+
+# Print the resulting covariance matrix
+print(cov_corr$covariance)
+print("-----------------------------------------------------------------------------------------------------")
+
+# Print the resulting correlation matrix
+print(cov_corr$correlation)
+print("-----------------------------------------------------------------------------------------------------")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

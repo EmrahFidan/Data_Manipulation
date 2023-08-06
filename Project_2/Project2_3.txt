@@ -1,0 +1,27 @@
+#fonksiyon
+draw_scatterplot <- function(data, x_var, y_var) {
+  # x ve y değişkenleri belirlenir
+  x <- data[[x_var]]
+  y <- data[[y_var]]
+  
+  #çizim
+  plot(x, y, xlab = x_var, ylab = y_var, main = "Scatterplot")
+}
+
+#matris fonksiyonu
+draw_scatterplot_matrix <- function(data) {
+  # pairs fonksiyonu kullanılarak scatterplot matrisi çizimi yapılır
+  pairs(~., data = data, main = "Scatterplot Matrix")
+}
+
+data <- read.table("DatasetNA.txt", header = TRUE, dec = ",")
+
+#sayısal değerlere çevirme
+numeric_cols <- c("Var1", "Var2", "Var3", "Var4", "Var5", "Var6", "Var7", "Var8")
+data[numeric_cols] <- lapply(data[numeric_cols], function(x) as.numeric(gsub(",", ".", x)))
+
+#iki değer arasında
+draw_scatterplot(data, "Var1", "Var2")
+
+#tüm matris
+draw_scatterplot_matrix(data[, numeric_cols])

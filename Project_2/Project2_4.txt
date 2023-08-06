@@ -1,0 +1,31 @@
+#create my scale()
+myScale <- function(data, vars) {
+  if (!is.character(vars)) {
+    vars <- as.character(vars)
+  }
+  
+  for (var in vars) {
+    if (var %in% colnames(data)) {
+      variable <- data[[var]]
+      variable <- variable[!is.na(variable)]
+      
+      mean_val <- sum(variable) / length(variable)
+      sd_val <- sqrt(sum((variable - mean_val)^2) / length(variable))
+      
+      scaled_variable <- round((variable - mean_val) / sd_val, 2)
+      
+      # update data
+      data[[var]][!is.na(data[[var]])] <- as.vector(scaled_variable)
+    } else {
+      print(paste(var, " warning"))
+    }
+  }
+  
+  return(data)
+}
+
+data <- read.table("DatasetNA.txt", header = TRUE, sep = " ", dec = ",", na.strings = "NA")
+data <- myScale(data, c("Var1","Var2", "Var3", "Var4","Var5", "Var6", "Var7","Var8"))
+
+#print
+print(data)

@@ -1,0 +1,478 @@
+> # Calculate statistics for Var1 by Group factor [I use Var1]
+> stats_by_group_Var1 <- calculate_stats_by_group(data, "Var1")
+> print("Statistics for Var1 by Group factor:")
+[1] "Statistics for Var1 by Group factor:"
+> print(stats_by_group_Var1)
+$Group3
+$Group3$num_obs
+[1] 28
+
+$Group3$minimum
+[1] 3.21
+
+$Group3$maximum
+[1] 4.67
+
+$Group3$range
+[1] 1.46
+
+$Group3$sum
+[1] 111.93
+
+$Group3$mean
+[1] 3.9975
+
+$Group3$median
+[1] 3.97
+
+$Group3$sum_squares
+[1] 2.453925
+
+$Group3$variance
+[1] 0.09088611
+
+$Group3$std_dev
+[1] 0.3014732
+
+
+$Group2
+$Group2$num_obs
+[1] 20
+
+$Group2$minimum
+[1] 3.55
+
+$Group2$maximum
+[1] 4.8
+
+$Group2$range
+[1] 1.25
+
+$Group2$sum
+[1] 79.03
+
+$Group2$mean
+[1] 3.9515
+
+$Group2$median
+[1] 3.89
+
+$Group2$sum_squares
+[1] 1.806455
+
+$Group2$variance
+[1] 0.09507658
+
+$Group2$std_dev
+[1] 0.3083449
+
+
+$Group1
+$Group1$num_obs
+[1] 30
+
+$Group1$minimum
+[1] 3.39
+
+$Group1$maximum
+[1] 4.52
+
+$Group1$range
+[1] 1.13
+
+$Group1$sum
+[1] 118.41
+
+$Group1$mean
+[1] 3.947
+
+$Group1$median
+[1] 3.935
+
+$Group1$sum_squares
+[1] 2.38243
+
+$Group1$variance
+[1] 0.08215276
+
+$Group1$std_dev
+[1] 0.286623
+
+
+$Group4
+$Group4$num_obs
+[1] 21
+
+$Group4$minimum
+[1] 3.65
+
+$Group4$maximum
+[1] 4.55
+
+$Group4$range
+[1] 0.9
+
+$Group4$sum
+[1] 85.48
+
+$Group4$mean
+[1] 4.070476
+
+$Group4$median
+[1] 4.09
+
+$Group4$sum_squares
+[1] 1.109695
+
+$Group4$variance
+[1] 0.05548476
+
+$Group4$std_dev
+[1] 0.235552
+
+
+> 
+> # Calculate statistics for Var1 by Gender factor [I use Var1]
+> stats_by_gender_Var1 <- calculate_stats_by_gender(data, "Var1")
+> print("Statistics for Var1 by Gender factor:")
+[1] "Statistics for Var1 by Gender factor:"
+> print(stats_by_gender_Var1)
+$Male
+$Male$num_obs
+[1] 56
+
+$Male$minimum
+[1] 3.21
+
+$Male$maximum
+[1] 4.53
+
+$Male$range
+[1] 1.32
+
+$Male$sum
+[1] 220.47
+
+$Male$mean
+[1] 3.936964
+
+$Male$median
+[1] 3.92
+
+$Male$sum_squares
+[1] 4.350584
+
+$Male$variance
+[1] 0.07910153
+
+$Male$std_dev
+[1] 0.2812499
+
+
+$Female
+$Female$num_obs
+[1] 43
+
+$Female$minimum
+[1] 3.64
+
+$Female$maximum
+[1] 4.8
+
+$Female$range
+[1] 1.16
+
+$Female$sum
+[1] 174.38
+
+$Female$mean
+[1] 4.055349
+
+$Female$median
+[1] 4.05
+
+$Female$sum_squares
+[1] 3.28347
+
+$Female$variance
+[1] 0.07817785
+
+$Female$std_dev
+[1] 0.279603
+
+
+> 
+> # Calculate statistics for Var1 by Group and Gender factors [I use Var1]
+> stats_by_group_gender_Var1 <- calculate_stats_by_group_gender(data, "Var1")
+> print("Statistics for Var1 by Group and Gender factors:")
+[1] "Statistics for Var1 by Group and Gender factors:"
+> print(stats_by_group_gender_Var1)
+$Group3
+$Group3$Male
+$Group3$Male$num_obs
+[1] 18
+
+$Group3$Male$minimum
+[1] 3.21
+
+$Group3$Male$maximum
+[1] 4.53
+
+$Group3$Male$range
+[1] 1.32
+
+$Group3$Male$sum
+[1] 70.37
+
+$Group3$Male$mean
+[1] 3.909444
+
+$Group3$Male$median
+[1] 3.845
+
+$Group3$Male$sum_squares
+[1] 1.530094
+
+$Group3$Male$variance
+[1] 0.09000556
+
+$Group3$Male$std_dev
+[1] 0.3000093
+
+
+$Group3$Female
+$Group3$Female$num_obs
+[1] 10
+
+$Group3$Female$minimum
+[1] 3.89
+
+$Group3$Female$maximum
+[1] 4.67
+
+$Group3$Female$range
+[1] 0.78
+
+$Group3$Female$sum
+[1] 41.56
+
+$Group3$Female$mean
+[1] 4.156
+
+$Group3$Female$median
+[1] 4.065
+
+$Group3$Female$sum_squares
+[1] 0.53304
+
+$Group3$Female$variance
+[1] 0.05922667
+
+$Group3$Female$std_dev
+[1] 0.2433653
+
+
+
+$Group2
+$Group2$Male
+$Group2$Male$num_obs
+[1] 9
+
+$Group2$Male$minimum
+[1] 3.55
+
+$Group2$Male$maximum
+[1] 4.24
+
+$Group2$Male$range
+[1] 0.69
+
+$Group2$Male$sum
+[1] 34.72
+
+$Group2$Male$mean
+[1] 3.857778
+
+$Group2$Male$median
+[1] 3.86
+
+$Group2$Male$sum_squares
+[1] 0.3879556
+
+$Group2$Male$variance
+[1] 0.04849444
+
+$Group2$Male$std_dev
+[1] 0.2202145
+
+
+$Group2$Female
+$Group2$Female$num_obs
+[1] 11
+
+$Group2$Female$minimum
+[1] 3.67
+
+$Group2$Female$maximum
+[1] 4.8
+
+$Group2$Female$range
+[1] 1.13
+
+$Group2$Female$sum
+[1] 44.31
+
+$Group2$Female$mean
+[1] 4.028182
+
+$Group2$Female$median
+[1] 3.92
+
+$Group2$Female$sum_squares
+[1] 1.274764
+
+$Group2$Female$variance
+[1] 0.1274764
+
+$Group2$Female$std_dev
+[1] 0.3570383
+
+
+
+$Group1
+$Group1$Male
+$Group1$Male$num_obs
+[1] 18
+
+$Group1$Male$minimum
+[1] 3.39
+
+$Group1$Male$maximum
+[1] 4.52
+
+$Group1$Male$range
+[1] 1.13
+
+$Group1$Male$sum
+[1] 70.89
+
+$Group1$Male$mean
+[1] 3.938333
+
+$Group1$Male$median
+[1] 3.93
+
+$Group1$Male$sum_squares
+[1] 1.72225
+
+$Group1$Male$variance
+[1] 0.1013088
+
+$Group1$Male$std_dev
+[1] 0.3182905
+
+
+$Group1$Female
+$Group1$Female$num_obs
+[1] 12
+
+$Group1$Female$minimum
+[1] 3.64
+
+$Group1$Female$maximum
+[1] 4.46
+
+$Group1$Female$range
+[1] 0.82
+
+$Group1$Female$sum
+[1] 47.52
+
+$Group1$Female$mean
+[1] 3.96
+
+$Group1$Female$median
+[1] 3.975
+
+$Group1$Female$sum_squares
+[1] 0.6568
+
+$Group1$Female$variance
+[1] 0.05970909
+
+$Group1$Female$std_dev
+[1] 0.2443544
+
+
+
+$Group4
+$Group4$Male
+$Group4$Male$num_obs
+[1] 11
+
+$Group4$Male$minimum
+[1] 3.65
+
+$Group4$Male$maximum
+[1] 4.31
+
+$Group4$Male$range
+[1] 0.66
+
+$Group4$Male$sum
+[1] 44.49
+
+$Group4$Male$mean
+[1] 4.044545
+
+$Group4$Male$median
+[1] 4.11
+
+$Group4$Male$sum_squares
+[1] 0.5128727
+
+$Group4$Male$variance
+[1] 0.05128727
+
+$Group4$Male$std_dev
+[1] 0.2264669
+
+
+$Group4$Female
+$Group4$Female$num_obs
+[1] 10
+
+$Group4$Female$minimum
+[1] 3.76
+
+$Group4$Female$maximum
+[1] 4.55
+
+$Group4$Female$range
+[1] 0.79
+
+$Group4$Female$sum
+[1] 40.99
+
+$Group4$Female$mean
+[1] 4.099
+
+$Group4$Female$median
+[1] 4.05
+
+$Group4$Female$sum_squares
+[1] 0.58129
+
+$Group4$Female$variance
+[1] 0.06458778
+
+$Group4$Female$std_dev
+[1] 0.2541413
+
+
+
+> 
+> 
+> #-------------------------------------------------------------------#
+> 
+> 
