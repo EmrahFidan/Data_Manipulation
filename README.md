@@ -20,9 +20,9 @@ In my second project, you will see all the simple mathematical operations for Da
 <h2 style="color: #0081a7;"> Screenshots </h2>
 
 <div style="display: flex; justify-content: center;">
-<img src="https://github.com/EmrahFidan/educationApp/assets/114583209/70738a5c-12d9-4b03-ab4c-ebfa82351c7c" alt="Screenshot 2" width="300" style="margin-right: 10px;" />
-    <img src="https://github.com/EmrahFidan/educationApp/assets/114583209/9c32f446-663d-45a9-8fb2-d72a5337909a" alt="Screenshot 1" width="300" style="margin-right: 10px;" />
-    <img src="https://github.com/EmrahFidan/educationApp/assets/114583209/53dc5cd9-5131-4aa8-8165-5e1a59c88da0" alt="Screenshot 3" width="300" style="margin-right: 10px;" />
+<img src="https://github.com/EmrahFidan/educationApp/assets/114583209/70738a5c-12d9-4b03-ab4c-ebfa82351c7c" alt="Screenshot 2" width="150" style="margin-right: 10px;" />
+    <img src="https://github.com/EmrahFidan/educationApp/assets/114583209/9c32f446-663d-45a9-8fb2-d72a5337909a" alt="Screenshot 1" width="150" style="margin-right: 10px;" />
+    <img src="https://github.com/EmrahFidan/educationApp/assets/114583209/53dc5cd9-5131-4aa8-8165-5e1a59c88da0" alt="Screenshot 3" width="150" style="margin-right: 10px;" />
 
 </div>
 
