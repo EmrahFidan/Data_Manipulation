@@ -1,10 +1,27 @@
-![R](https://img.shields.io/badge/Language-R-orange.svg)
-[![Developed with R Studio](https://img.shields.io/badge/Developed%20with-R%20Studio-purple)](https://www.rstudio.com/)
-<a class="header-badge" target="_blank" href="https://www.linkedin.com/in/emrah-fidann/">
-<img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-</a>
 
-<h1 style="color: #4cc9f0;"> 📊  Data Visulation Project </h1>
+<h1 align="center">
+<br>
+📊  Data Visulation Project 
+</h1>
+
+<h3 align="center">
+  <a class="header-badge" target="_blank" href="https://github.com/EmrahFidan">
+    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-white.svg?logo=github&style=social"/>
+  </a>
+  <a href="https://img.shields.io/badge/Language-R-orange.svg" target="_blank">
+  <img alt="R" src="https://img.shields.io/badge/Language-R-orange.svg"/>
+</a>
+<a href="https://www.rstudio.com/" target="_blank">
+  <img alt="Developed with R Studio" src="https://img.shields.io/badge/Developed%20with-R%20Studio-purple"/>
+</a>
+  <a class="header-badge" target="_blank" href="https://github.com/EmrahFidan/Data_Manipulation/blob/main/LICENSE">
+    <img alt="License" src="https://img.shields.io/github/license/PritamSarbajna/tourism-website?color=darkblue"/>
+  </a>
+  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/emrah-fidann/" >
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-blue.svg?logo=linkedin&style=social"/>
+  </a>
+</h3>
+<br>
 
 In this repom, I did data analysis and data visualization projects by servicing R language.
 
