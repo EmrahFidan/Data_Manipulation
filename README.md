@@ -23,16 +23,11 @@
 </h3>
 <br>
 
-In this repom, I did data analysis and data visualization projects by servicing R language.
+In this repom, I did data analysis and data visualisation projects using the R language.
 
-It consists of two projects. In my first project, you will see the use of Barplot, Histogram and Boxplot for Data visualization. 
+It consists of two projects. In my first project you will see the use of Barplot, Histogram and Boxplot for data visualisation. 
 
-In my second project, you will see all the simple mathematical operations for Data Analysis and the top levels such as Cross products, covarience. You will also see the Scatterplot matrix example.
-
-<h2 style="color: #4cc9f0;"> Features </h1>
-
-- R 
-- Clean Code 
+In my second project you will see all the simple mathematical operations for data analysis and the top levels such as cross products, covariance. You will also see the Scatterplot Matrix example.
 
 <h2 style="color: #0081a7;"> Screenshots </h2>
 
@@ -45,20 +40,20 @@ In my second project, you will see all the simple mathematical operations for Da
 
 <h2 style="color: #4cc9f0;"> Files </h1>
 
+DATA =>  [Download](https://drive.google.com/file/d/1W-m49en5dnE5WJSYHfjniTXfyjbU5Kix/view?usp=sharing)   
+
 |  #  | Project Name     | Content     |
 | :-: | ---------------- | ----------- |
 | 01  | Data Visualization | Barplot - Histogram - Boxplot |
 | 02  | Data Analysis | Calculate max,min, ... - Cross products, covarience, ...  - Scatterplot matrix - Scale |
 
-DATA => https://drive.google.com/file/d/1W-m49en5dnE5WJSYHfjniTXfyjbU5Kix/view?usp=sharing
+<h2 style="colour: #4cc9f0;"> Lessons learned </h1>
 
-<h2 style="color: #4cc9f0;"> Lessons Learned </h1>
+R is a programming language used in areas such as statistical computing, data analysis, graphics and data visualisation. 
 
-R is a programming language used in areas such as statistical calculations, data analysis, graphic drawings and data visualization. 
+Unlike the software languages I use in my other projects, R is an interpretive and functional programming language. I can even compile that little piece of code you wrote. (regardless of the whole code) 
 
-Unlike the software languages I use in my other projects, R is the interpretive and functional programming language. I can even compile the small piece of code you wrote. ( regardless of the entire code ) 
-
-Since it is a functional programming language, it allows us to perform high level vector operations. 
+Being a functional programming language, it allows us to perform high-level vector operations. 
 
 It should definitely not be preferred for beginners.
 
